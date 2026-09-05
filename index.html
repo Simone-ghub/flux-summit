@@ -866,6 +866,11 @@ dialog{border-radius:var(--r-lg);overflow:hidden}
 .shelf-board{border-radius:3px}
 .gph img,.sp .sph img{border-radius:0}
 
+/* white ground: call for startups, quote band, motion band */
+.cfs{background:#fff}
+.cfs .cfs-box{background:#FBFAF8}
+.figures-white{background:#fff}
+.flux-band{--fb-ground:#fff;--fb-glow:#F4F3EF}
 /* ---- call for startups ---- */
 .cfs{padding:clamp(26px,3vw,38px) 0}
 .cfs .wrap{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
@@ -1246,6 +1251,7 @@ dialog#cfsfaq{max-width:620px;max-height:85vh;overflow-y:auto;overscroll-behavio
 </section>
 
 <!-- ============ FIGURES ============ -->
+<div class="figures-white">
 <div class="wrap">
   <div class="figures">
     <svg class="bg" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
@@ -1268,6 +1274,7 @@ dialog#cfsfaq{max-width:620px;max-height:85vh;overflow-y:auto;overscroll-behavio
       <a class="btn fsponsor" href="#sponsor">Become a sponsor</a>
     </div>
   </div>
+</div>
 </div>
 
 <!-- ============ ECOSYSTEM BAND (motion, treatment B ink) ============ -->
