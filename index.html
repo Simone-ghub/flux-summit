@@ -894,9 +894,10 @@ dialog{border-radius:var(--r-lg);overflow:hidden}
   transition:background .15s ease-out,color .15s ease-out,border-color .15s ease-out}
 .cfs-faq:hover{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .cfs-faq span{font-size:15px;line-height:1}
-dialog#cfsfaq{max-width:620px}
-.dg-cfsfaq{max-height:82vh;display:flex;flex-direction:column}
-.cfsfaq-scroll{overflow-y:auto;margin-top:4px}
+dialog#cfsfaq{max-width:620px;max-height:85vh;overflow-y:auto;overscroll-behavior:contain}
+.dg-cfsfaq{display:block}
+.dg-cfsfaq .close{position:sticky;float:right;top:0;z-index:2}
+.cfsfaq-scroll{margin-top:4px}
 .cfsfaq-scroll .faq-item:first-child{border-top:0}
 .cfs-inline{font-weight:600;text-decoration:none;color:var(--signal-text);
   border-bottom:1px solid var(--signal);white-space:nowrap}
@@ -1620,16 +1621,15 @@ dialog#cfsfaq{max-width:620px}
           <div class="faq-a">Yes. No fee to apply or pitch, no prize or ranking: you leave with feedback from investors and top mentors, and the FLUX network.</div>
         </details>
         <details class="faq-item">
-          <summary>Is it in Rome?<span class="pl">+</span></summary>
-          <div class="faq-a">Yes. 5 November 2026, at FLUX 26, 3:00&ndash;8:00 PM. Venue announced soon.</div>
+          <summary>Is it in Rome? Can I pitch remotely?<span class="pl">+</span></summary>
+          <div class="faq-a">Rome, 5 November 2026, at FLUX 26, 3:00&ndash;8:00 PM. Venue announced soon.
+          No remote pitching: you are on stage, in person.</div>
         </details>
         <details class="faq-item">
-          <summary>Who can apply?<span class="pl">+</span></summary>
-          <div class="faq-a">Startups with a closed round and product-market fit in Italy, or founders still working toward problem-solution fit.</div>
-        </details>
-        <details class="faq-item">
-          <summary>How many applications do you accept?<span class="pl">+</span></summary>
-          <div class="faq-a">Fifteen. Applications close at 15 or on 15 October, whichever comes first.</div>
+          <summary>Who can apply? 2 categories<span class="pl">+</span></summary>
+          <div class="faq-a"><b>Scale</b>, 1 spot: you closed a round and reached product-market fit in your
+          country or one market, and you want a US and international network.<br>
+          <b>Build</b>, 3 spots: you are a founder still working toward problem-solution fit.</div>
         </details>
         <details class="faq-item">
           <summary>Can I come with my cofounder?<span class="pl">+</span></summary>
@@ -1646,10 +1646,6 @@ dialog#cfsfaq{max-width:620px}
         <details class="faq-item">
           <summary>Do I need to be incorporated?<span class="pl">+</span></summary>
           <div class="faq-a">Not for category 2. Founders still working toward problem-solution fit are welcome.</div>
-        </details>
-        <details class="faq-item">
-          <summary>Can I pitch remotely?<span class="pl">+</span></summary>
-          <div class="faq-a">No. You are on stage in Rome on 5 November.</div>
         </details>
     </div>
     <div class="cta-row" style="margin-top:20px">
