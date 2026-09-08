@@ -795,6 +795,9 @@ dialog#events{max-width:640px}
   box-shadow:0 1px 0 var(--fb-lip),0 -1px 0 var(--fb-lip),0 3px 5px var(--fb-cast);
   animation:fb-claw var(--fb-cycle) linear calc(var(--fb-d) + var(--fb-s)) infinite}
 
+/* shades removed behind wording 2026-09-08, per Simone: keep only the word text */
+.fb-pool,.fb-key,.fb-grain,.fb-claw{display:none!important}
+
 @media (prefers-reduced-motion:reduce){
   .flux-band{--fb-slot:1200ms;--fb-cycle:14400ms}
   .fb-key{animation:none;opacity:.5}
