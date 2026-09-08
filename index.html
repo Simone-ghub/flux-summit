@@ -488,9 +488,6 @@ details.drop[open] summary .pl{transform:rotate(45deg)}
 .ccard:nth-child(3){transform:rotate(.45deg)}
 .ccard:hover,.ccard:focus-visible{transform:translateY(-4px) rotate(0deg);
   box-shadow:0 10px 24px rgba(8,8,11,.16);outline:none}
-.ccard-suggest{cursor:pointer;font:inherit;text-align:left;border-style:dashed;
-  background-image:none;justify-content:center;min-height:100%}
-.ccard-suggest .ti{color:var(--signal-text)}
 .ccard::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--signal)}
 .ccard::after{content:"";position:absolute;bottom:9px;left:50%;transform:translateX(-50%);
   width:13px;height:13px;border-radius:50%;border:1px solid rgba(8,8,11,.32);background:var(--paper)}
@@ -505,6 +502,14 @@ details.drop[open] summary .pl{transform:rotate(45deg)}
   font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--signal-text);border:1px solid var(--signal-text);padding:4px 8px;
   background:transparent;transform:rotate(-1.6deg)}
+.ccard-suggest{cursor:pointer;font:inherit;text-align:left;border-style:dashed;
+  border-color:rgba(8,8,11,.22);background-image:none;justify-content:center;min-height:100%;
+  opacity:.72;transition:opacity .2s ease-out,transform .2s cubic-bezier(.2,.7,.3,1)}
+.ccard-suggest:hover,.ccard-suggest:focus-visible{opacity:1}
+.ccard-suggest::before{background:rgba(8,8,11,.16)}
+.ccard-suggest .ti{color:var(--ink);font-size:15px}
+.ccard-suggest .wy{color:var(--mid)}
+.ccard-suggest .stamp{border-color:rgba(8,8,11,.3);color:var(--mid);transform:none}
 
 
 /* empty slot on the shelf */
@@ -1549,13 +1554,6 @@ dialog#cfsfaq{max-width:620px;max-height:85vh;overflow-y:auto;overscroll-behavio
         <div class="au">Committee on Accelerating Translation and Entrepreneurship<br>MIT Office of the Provost</div>
         <div class="wy">Five institutional reforms for turning MIT research and student ideas into ventures and real-world impact.</div>
         <span class="stamp">Report</span>
-      </a>
-      <a class="ccard" href="https://link.springer.com/article/10.1007/s11187-019-00153-w" target="_blank" rel="noopener">
-        <div class="call">2020</div>
-        <div class="ti">Comparing effectuation to discovery-driven planning, prescriptive entrepreneurship, business planning, lean startup, and design thinking</div>
-        <div class="au">Mansoori, Yashar<br>Lack&eacute;us, Martin<br>Small Business Economics</div>
-        <div class="wy">Six method families set side by side. The academic answer to which playbook actually does what.</div>
-        <span class="stamp">Peer reviewed</span>
       </a>
       <a class="ccard" href="https://www.nature.com/articles/s41598-025-09545-3" target="_blank" rel="noopener">
         <div class="call">2025</div>
