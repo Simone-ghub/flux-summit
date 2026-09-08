@@ -488,6 +488,9 @@ details.drop[open] summary .pl{transform:rotate(45deg)}
 .ccard:nth-child(3){transform:rotate(.45deg)}
 .ccard:hover,.ccard:focus-visible{transform:translateY(-4px) rotate(0deg);
   box-shadow:0 10px 24px rgba(8,8,11,.16);outline:none}
+.ccard-suggest{cursor:pointer;font:inherit;text-align:left;border-style:dashed;
+  background-image:none;justify-content:center;min-height:100%}
+.ccard-suggest .ti{color:var(--signal-text)}
 .ccard::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--signal)}
 .ccard::after{content:"";position:absolute;bottom:9px;left:50%;transform:translateX(-50%);
   width:13px;height:13px;border-radius:50%;border:1px solid rgba(8,8,11,.32);background:var(--paper)}
@@ -1520,33 +1523,31 @@ dialog#cfsfaq{max-width:620px;max-height:85vh;overflow-y:auto;overscroll-behavio
     <p class="libsub" style="margin:clamp(40px,4.4vw,64px) 0 0">What Paul Graham, McKinsey and others have published on this</p>
     <div class="cards">
       <a class="ccard" href="https://www.paulgraham.com/prepare.html" target="_blank" rel="noopener">
-        <div class="call">PG &middot; 2026.08</div>
+        <div class="call">2026.08</div>
         <div class="ti">How Universities Should Prepare Founders</div>
         <div class="au">Graham, Paul<br>paulgraham.com</div>
         <div class="wy">The case for rebuilding how institutions produce founders. Published this month.</div>
         <span class="stamp">Essay</span>
       </a>
-      <a class="ccard" href="https://link.springer.com/article/10.1007/s11187-019-00153-w" target="_blank" rel="noopener">
-        <div class="call">SBE &middot; 2020</div>
-        <div class="ti">Comparing effectuation to discovery-driven planning, prescriptive entrepreneurship, business planning, lean startup, and design thinking</div>
-        <div class="au">Mansoori, Yashar<br>Lack&eacute;us, Martin<br>Small Business Economics</div>
-        <div class="wy">Six method families set side by side. The academic answer to which playbook actually does what.</div>
-        <span class="stamp">Peer reviewed</span>
-      </a>
-      <a class="ccard" href="https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/grow-fast-or-die-slow-the-role-of-profitability-in-sustainable-growth" target="_blank" rel="noopener">
-        <div class="call">MCK &middot; 2017.10</div>
-        <div class="ti">Grow fast or die slow: The role of profitability in sustainable growth</div>
-        <div class="au">Gnanasambandam, Chandra<br>Miller, Allen<br>Sprague, Kara</div>
-        <div class="wy">The study behind the growth-versus-profitability argument that programs still run on.</div>
-        <span class="stamp">Research</span>
-      </a>
       <a class="ccard" href="https://provost.mit.edu/wp-content/uploads/2026/08/Accelerating-Entrepreneurship-and-Translation-at-MIT.pdf" target="_blank" rel="noopener">
-        <div class="call">MIT &middot; 2026.08</div>
+        <div class="call">2026.08</div>
         <div class="ti">Accelerating Translation and Entrepreneurship at MIT</div>
         <div class="au">Committee on Accelerating Translation and Entrepreneurship<br>MIT Office of the Provost</div>
         <div class="wy">Five institutional reforms for turning MIT research and student ideas into ventures and real-world impact.</div>
         <span class="stamp">Report</span>
       </a>
+      <a class="ccard" href="https://link.springer.com/article/10.1007/s11187-019-00153-w" target="_blank" rel="noopener">
+        <div class="call">2020</div>
+        <div class="ti">Comparing effectuation to discovery-driven planning, prescriptive entrepreneurship, business planning, lean startup, and design thinking</div>
+        <div class="au">Mansoori, Yashar<br>Lack&eacute;us, Martin<br>Small Business Economics</div>
+        <div class="wy">Six method families set side by side. The academic answer to which playbook actually does what.</div>
+        <span class="stamp">Peer reviewed</span>
+      </a>
+      <button class="ccard ccard-suggest" type="button" id="suggest-article">
+        <div class="ti">Suggest an article or paper</div>
+        <div class="wy">Know something that belongs on this list? Send it over.</div>
+        <span class="stamp">+ Suggest</span>
+      </button>
     </div>
   </div>
 </section>
@@ -1712,6 +1713,39 @@ dialog#cfsfaq{max-width:620px;max-height:85vh;overflow-y:auto;overscroll-behavio
       <div class="stampbig">Received &middot; under review</div>
       <p>Filed. Thank you.</p>
       <span>If it makes the shelf, your name goes under it</span>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="artslip">
+  <div class="slip">
+    <button class="close" data-close aria-label="Close">&times;</button>
+    <form novalidate>
+      <div class="call">Suggestion &middot; FLUX 26 Library</div>
+      <h3>Suggest an article or paper.</h3>
+      <p class="sub">Point us to something worth reading. If it makes the list, your name and
+      profile go under it as the person who suggested it.</p>
+      <div class="sfields">
+        <div class="sfield full"><label for="a-title">Title <i>*</i></label>
+          <input id="a-title" type="text" placeholder="Title" required></div>
+        <div class="sfield full"><label for="a-link">Link <i>*</i></label>
+          <input id="a-link" type="url" placeholder="https://..." required></div>
+        <div class="sfield"><label for="a-name">Your name <i>*</i></label>
+          <input id="a-name" type="text" placeholder="Name and surname" required></div>
+        <div class="sfield"><label for="a-li">LinkedIn profile <i>*</i></label>
+          <input id="a-li" type="url" placeholder="linkedin.com/in/..." required></div>
+        <div class="sfield full"><label for="a-mail">Email <span style="opacity:.6">optional</span></label>
+          <input id="a-mail" type="email" placeholder="you@company.com"></div>
+        <div class="sfield full"><label for="a-why">Why it belongs here <span style="opacity:.6">optional</span></label>
+          <textarea id="a-why" rows="2" placeholder="One or two lines"></textarea></div>
+      </div>
+      <button class="btn" type="submit">Send the request</button>
+      <p class="fine">Reviewed by hand &middot; accepted picks are credited to you on the list</p>
+    </form>
+    <div class="slipdone">
+      <div class="stampbig">Received &middot; under review</div>
+      <p>Filed. Thank you.</p>
+      <span>If it makes the list, your name goes under it</span>
     </div>
   </div>
 </dialog>
@@ -1883,6 +1917,30 @@ dialog#cfsfaq{max-width:620px;max-height:85vh;overflow-y:auto;overscroll-behavio
     });
     if(bad){ bad.focus(); return; }
     d.classList.add('sent');
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var d=document.getElementById('artslip'), b=document.getElementById('suggest-article');
+  if(!d||!b) return;
+  var box=d.querySelector('.slip'), f=d.querySelector('form');
+  b.addEventListener('click',function(){ d.showModal?d.showModal():d.setAttribute('open',''); });
+  d.querySelectorAll('[data-close]').forEach(function(x){
+    x.addEventListener('click',function(){ d.close?d.close():d.removeAttribute('open'); });
+  });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var bad=null;
+    [['a-title','text'],['a-link','text'],['a-name','text'],['a-li','li']].forEach(function(p){
+      var el=document.getElementById(p[0]), v=el.value.trim(), ok;
+      ok = p[1]==='li' ? /linkedin\.com\/in\/[^\/\s]+/i.test(v) : v.length>1;
+      el.style.borderBottomColor = ok ? '' : '#7A0033';
+      if(!ok && !bad) bad=el;
+    });
+    if(bad){ bad.focus(); return; }
+    box.classList.add('sent');
   });
 })();
 </script>
